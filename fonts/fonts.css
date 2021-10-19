@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "ImagoPro";
+    src: url("ImagoProRegular.eot");
+    src: url("ImagoProRegular.eot?#iefix") format("embedded-opentype"),
+    url("ImagoProRegular.woff") format("woff"),
+    url("ImagoProRegular.woff2") format("woff2"),
+    url("ImagoProRegular.ttf") format("truetype"),
+    url('ImagoProRegular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ImagoPro";
+    src: url("ImagoProMedium.eot");
+    src: url("ImagoProMedium.eot?#iefix") format("embedded-opentype"),
+    url("ImagoProMedium.woff") format("woff"),
+    url("ImagoProMedium.woff2") format("woff2"),
+    url("ImagoProMedium.ttf") format("truetype"),
+    url('ImagoProMedium.svg') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ImagoProItalic";
+    src: url("ImagoProItalic.eot");
+    src: url("ImagoProItalic.eot?#iefix") format("embedded-opentype"),
+    url("ImagoProItalic.woff") format("woff"),
+    url("ImagoProItalic.woff2") format("woff2"),
+    url("ImagoProItalic.ttf") format("truetype"),
+    url('ImagoProItalic.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+

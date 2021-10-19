@@ -1,0 +1,180 @@
+@import 'responsive'
+
+.pic
+	overflow: hidden
+	margin-bottom: 16px
+	&--inner
+		padding-bottom: 60px
+		+media(md)
+			padding-bottom: 40px
+		+media(sm)
+			padding-bottom: 8px
+
+	&__wrap
+		display: grid
+		grid-auto-rows: 1fr
+		grid-template-columns: repeat(6, 1fr)
+		grid-gap: 16px
+		+media(sm)
+			grid-gap: 12px
+
+		.pic__item:nth-child(6n+1),
+		.pic__item:nth-child(6n+2)	
+			@media screen and (min-width: $break_mdx) 
+				grid-column: span 3
+
+		.pic__item:nth-child(6n+5),
+		.pic__item:nth-child(6n+4),
+		.pic__item:nth-child(6n+3)
+			@media screen and (min-width: $break_mdx) 
+				grid-column: span 2
+
+		.pic__item:nth-child(6n)
+			@media screen and (min-width: $break_mdx)
+				grid-column: 1/-1
+				.pic__content
+					max-width: 920px
+					margin: 0 auto
+					margin-top: auto
+
+		.pic__item:nth-child(6n+1):last-child,
+		.pic__item:nth-child(6n+3):last-child
+			@media screen and (min-width: $break_mdx)
+				grid-column: 1/-1
+
+		.pic__item:nth-child(6n+3):nth-last-child(2),
+		.pic__item:nth-child(6n+4):last-child
+			@media screen and (min-width: $break_mdx)
+				grid-column: span 3
+
+
+		.pic__item:nth-child(3n+1),
+		.pic__item:nth-child(3n+2)	
+			@media (max-width: $break_mdx) and (min-width: $break_sm) 
+				grid-column: span 3
+
+		.pic__item:nth-child(3n)
+			@media (max-width: $break_mdx) and (min-width: $break_sm) 
+				grid-column: 1/-1
+
+		.pic__item:nth-child(3n+1):last-child
+			@media (max-width: $break_mdx) and (min-width: $break_sm) 
+				grid-column: 1/-1
+
+		.pic__item
+			@media screen and (max-width: $break_sm)
+				grid-column: 1 /-1
+
+
+
+	&__item
+		overflow: hidden
+		position: relative
+		//background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #4C4C4C 100%)
+		display: flex
+		flex-direction: column
+		padding: 36px
+		min-height: 462px
+		+media(mdx)
+			min-height: 422px
+		+media(sm)
+			min-height: 360px
+		+media(sm)
+			width: 100%
+			padding: 36px 12px
+			padding-bottom: 24px
+
+		&--no-image
+			background: linear-gradient(#ededed, #ededed) no-repeat center / calc(100% - 4px) calc(100% - 4px), linear-gradient(#c8c8c8 50%, #545454 50%)
+			//background: linear-gradient(180deg, rgba(238, 238, 238, 0) 0%, rgb(61, 61, 61) 100%)
+			position: relative
+			&:after
+				position: absolute
+				content: ' '
+				z-index: 0
+				bottom: 0px
+				left: 0px
+				right: 0px
+				width: 100%	
+				height: 80%	
+				background: linear-gradient(180deg, rgba(238, 238, 238, 0) 0%, #3d3d3d 100%)
+				mix-blend-mode: multiply
+			
+		&:hover
+			.pic__image img 
+				transform: scale(1.1)
+
+
+	&__content
+		position: relative
+		z-index: 3
+		margin-top: auto
+		+media(sm)
+			display: flex
+			flex-direction: column
+			margin: 0 auto
+			margin-top: auto
+
+	&__image
+		position: absolute
+		z-index: -1
+		content: ' '
+		top: 0px
+		left: 0px
+		width: 100%
+		height: 100%
+		img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: top center
+			transition: 0.3s transform
+
+	&__title
+		font-size: 2.375rem
+		line-height: 1.25
+		color: #fff
+		text-transform: uppercase
+		margin-bottom: 8px
+		font-weight: 500
+		+media(lgxs)
+			font-size: 2rem
+		+media(mdx)
+			font-size: 1.875rem
+		+media(md)
+			font-size: 1.5rem
+		+media(sm)
+			text-align: center
+		span
+			color: #ffed00
+
+	&__subtitle
+		font-size: 2.375rem
+		line-height: 1.25
+		color: #fff
+		text-transform: uppercase
+		margin-bottom: 16px
+		font-weight: 500
+		+media(lgxs)
+			font-size: 2rem
+		+media(mdx)
+			font-size: 1.875rem
+		+media(md)
+			font-size: 1.5rem
+		+media(sm)
+			text-align: center
+		span
+			color: #ffed00
+
+	&__text
+		margin-bottom: 16px
+		p
+			font-size: 1.125rem
+			line-height: 1.5
+			color: #fff
+			+media(md)
+				font-size: 1.0625rem
+			+media(sm)
+				font-size: 1rem
+				text-align: center

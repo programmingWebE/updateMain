@@ -1,0 +1,80 @@
+@import 'responsive'
+
+.panel
+	background: linear-gradient(180deg, #004386 0%, #0065CA 100%)
+	padding-top: 45px
+	margin-bottom: 16px
+	transition: 0.4s background
+	+media(mdx)
+		padding-bottom: 80px
+		padding-top: 80px
+	+media(sm)
+		margin-bottom: 12px	
+
+	&__title
+		font-size: 2.9375rem
+		line-height: 1
+		color: #fff
+		text-transform: uppercase
+		text-align: center
+		margin-bottom: 17px
+		font-weight: normal
+		+media(md)
+			font-size: 2.375rem
+		+media(sm)
+			font-size: 1.875rem
+
+	&__text
+		min-height: 42px
+		max-width: 760px
+		margin: 0 auto
+		margin-bottom: 70px
+		+media(mdx)
+			margin-bottom: 16px
+		p
+			font-size: 1.125rem
+			line-height: 1.17
+			color: #fff
+			text-align: center
+
+	&__wrap
+		display: flex
+		justify-content: center
+		+media(mdx)
+			display: none
+
+	&__item
+		display: flex
+		flex-direction: column
+		width: calc(100% / 5 )
+		margin-bottom: 28px
+		&:hover .panel__link
+			opacity: 1
+			visibility: visible
+
+	&__link
+		display: block
+		opacity: 0
+		visibility: hidden
+		font-size: 0.8125rem
+		line-height: 1.17
+		color: #fff
+		text-align: center
+		text-transform: uppercase
+		margin-top: auto
+		font-weight: 500
+		transition: 0.3s opacity
+
+	&__image
+		padding: 0 10px
+		margin-bottom: 4px
+		img
+			display: block
+			margin: 0 auto
+			transition: 0.4s opacity
+
+	&__disabled
+		opacity: 0.25
+	
+	&__active
+		opacity: 1

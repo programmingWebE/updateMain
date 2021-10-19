@@ -1,0 +1,51 @@
+@import 'responsive'
+
+.product
+	&__holder
+		background: linear-gradient(180deg, #004285 0%, #0066CC 100%)
+		padding-bottom: 34px	
+		margin-bottom: 28px
+
+	&__block
+		max-width: 940px
+		padding-top: 44px
+		margin: 0 auto
+
+	&__title
+		font-size: 3.375rem
+		line-height: 1
+		color: #fff
+		text-align: center
+		padding-bottom: 24px
+		font-weight: normal
+
+	&__text
+		padding-bottom: 20px
+		p
+			font-size: 24px
+			line-height: 1
+			color: #fff
+
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -20px
+
+	&__item
+		width: calc(100% / 3 - 40px)
+		position: relative
+		min-height: 434px
+		box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15)
+		margin: 0 20px
+		&:after
+			position: absolute
+			content: ' '
+			top: 0px
+			left: 0px
+			width: 100%
+			height: 12px
+			background-color: #0066cc
+
+
+	&__image
+		margin-top: 12px	

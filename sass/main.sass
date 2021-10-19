@@ -1,0 +1,147 @@
+@import 'responsive'
+
+html
+	font-size: 16px
+
+body
+	margin: 0
+	padding: 0
+	width: 100%
+	min-height: 100vh
+	overflow-x: hidden
+	color: #333333
+	background-color: transparent
+	line-height: 1.2
+	font-weight: normal
+	font-style: normal
+	font-family: ImagoPro
+
+* 
+	box-sizing: border-box
+
+*::after,
+*::before
+	box-sizing: border-box
+
+.visually-hidden
+	position: absolute
+	width: 1px
+	height: 1px
+	margin: -1px
+	bottom: 0
+	padding: 0
+	white-space: nowrap
+	clip-path: inset(100%)
+	clip: rect(0 0 0 0)
+	overflow: hidden
+
+
+img
+	max-width: 100%
+	height: auto
+
+.svg-about
+	display: none
+
+.container
+	max-width: 1400px
+	width: 100%
+	margin: 0 auto
+	&--info
+		max-width: 1190px
+		padding: 0 100px
+		+media(sm)
+			padding: 0 48px
+
+	&--panel
+		max-width: 1296px
+		padding: 0 48px
+		+media(md)
+			padding: 0 24px
+		
+
+	&--block
+		max-width: 988px
+		padding: 0 24px
+
+.input
+	display: block
+	width: 100%
+	background-color: #c4c4c4
+	border: none
+	outline: none
+	padding: 10px
+	padding-bottom: 11px
+	&.form-fail
+		border-color: #b00
+
+	&.form-done
+		border-color: #90ee90
+
+.btn
+	overflow: hidden
+	background-repeat: no-repeat
+	background-size: 12px 20px
+	background-position: right 10px center
+	display: inline-block
+	cursor: pointer
+	max-width: max-content
+	width: 100%
+	position: relative
+	font-size: 1.125rem
+	line-height: 1.8	
+	color: #fff
+	background-color: transparent
+	border: 1px solid #fff
+	border-radius: 8px
+	text-transform: uppercase
+	text-align: left
+	padding: 7px 12px
+	padding-right: 42px
+	font-family: ImagoPro
+	font-weight: normal
+	transition: 0.3s background-color
+	&:not(.btn--user)
+		+media(sm)
+			font-size: 0.8125rem
+			margin: 0 auto
+			padding: 8px 12px
+			padding-right: 42px
+
+	span
+		position: relative
+		transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1)
+		transition: 0.3s transform, 0.3s opacity
+		&:after
+			position: absolute
+			content: ' '
+			right: -20px
+			top: calc(50% - 6px)
+			width: 12px
+			height: 12px
+			border-top: 3px solid #fff
+			border-right: 3px solid #fff
+			transform: rotate(45deg)
+
+		&.no-active
+			position: absolute
+			opacity: 0
+			left: 12px
+			transform: translate3d(0, 120%, 0)
+
+	&:hover
+		background-color: rgba(255, 255, 255, 0.1)
+		span:not(.no-active)
+			opacity: 0
+
+		.no-active
+			transform: translate3d(0, 0, 0)
+			opacity: 1
+
+	&--user
+		font-size: 1.125rem
+		padding: 6px 12px
+		padding-bottom: 7px
+		margin-bottom: 22px
+		span:after
+			display: none

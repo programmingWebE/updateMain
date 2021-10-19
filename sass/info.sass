@@ -1,0 +1,138 @@
+@import 'responsive'
+
+.info
+	margin-bottom: 16px
+	+media(sm)
+		margin-bottom: 12px	
+		
+	&__wrap
+		position: relative
+		
+	&__item
+		height: auto
+		//min-height: 450px	
+		position: relative
+		background-size: cover
+		background-position: center
+		background-repeat: no-repeat
+		padding: 148px 0
+		+media(sm)
+			flex-direction: column
+			align-items: center
+			padding-top: 272px	
+			padding-bottom: 60px	
+
+	&__content
+		max-width: 480px
+		width: 100%
+		position: relative
+		z-index: 2
+		+media(sm)
+			width: 100%
+			max-width: 100%
+			display: flex
+			flex-direction: column
+
+	&__image
+		position: absolute
+		top: 0px
+		left: 0px
+		width: 100%
+		height: 100%
+		img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: right center
+			+media(smx)
+				object-position: top center
+
+	&__title
+		font-size: 3.25rem
+		line-height: 1	
+		color: #fff	
+		padding-bottom: 15px
+		font-weight: 500	
+		+media(md)
+			font-size: 2.5rem
+		+media(sm)
+			font-size: 1.875rem
+			text-align: center
+		span
+			color: #ffed00
+
+	&__text
+		padding-bottom: 16px
+		p
+			font-size: 1.125rem
+			line-height: 1	
+			color: #fff
+			+media(md)
+				font-size: 1.0625rem
+			+media(sm)
+				font-size: 1rem
+				text-align: center
+
+	&__button
+		position: absolute
+		cursor: pointer
+		background-image: none
+		content: ' '
+		z-index: 5
+		top: 50%
+		transform: translateY(-50%)
+		width: 40px
+		height: 40px
+		margin-top: 0px
+		transition: 0.3s background-color
+		&:after
+			position: absolute
+			content: ' '
+			left: 15px
+			top: calc(50% - 14px)
+			width: 28px
+			height: 28px
+			border-left: 4px solid rgba(255, 255, 255, 0.5)
+			border-top: 4px solid rgba(255, 255, 255, 0.5)
+			transform: rotate(-45deg)
+			transition: 0.3s border-color
+
+		&--prev
+			left: 16px
+			+media(sm)
+				left: 6px
+			
+
+		&--next
+			right: 16px
+			transform: translateY(-50%) scale(-1)
+			+media(sm)
+				right: 6px
+
+		&:hover
+			&:after,
+			&:before
+				border-color: #fff
+
+	.swiper-pagination 
+		display: flex
+		align-items: center
+		justify-content: center
+		bottom: 12px
+		+media(sm)
+			display: none	
+			
+		.swiper-pagination-bullet
+			display: block
+			cursor: pointer
+			width: 14px
+			height: 14px
+			background-color: transparent
+			border: 1px solid #fff
+			opacity: 1
+			margin: 0 5px
+			&.swiper-pagination-bullet-active
+				background-color: #fff
+
+				
